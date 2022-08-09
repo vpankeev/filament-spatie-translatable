@@ -25,13 +25,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Pankeev\\Translatable\\": "src"
+            "Randes\\Translatable\\": "src"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Pankeev\\Translatable\\FilamentSpatieTranslatableProvider"
+                "Randes\\Translatable\\FilamentSpatieTranslatableProvider"
             ]
         }
     },

@@ -19,9 +19,7 @@
     "require": {
         "php": "^8.0",
         "filament/filament": "^2.1",
-        "illuminate/database": "^9.0",
-        "illuminate/support": "^9.0",
-        "laravel/framework": "9.19",
+        "laravel/framework": "^9.0",
         "spatie/laravel-translatable": "^6.0"
     },
     "autoload": {

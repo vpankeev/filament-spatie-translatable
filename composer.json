@@ -21,6 +21,7 @@
         "filament/filament": "^2.1",
         "illuminate/database": "^9.0",
         "illuminate/support": "^9.0",
+        "laravel/framework": "9.19",
         "spatie/laravel-translatable": "^6.0"
     },
     "autoload": {

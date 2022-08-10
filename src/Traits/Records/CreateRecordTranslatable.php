@@ -3,6 +3,7 @@
 namespace Randes\Translatable\Traits\Records;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Arr;
 use Randes\Translatable\Traits\HasActiveFormLocaleSwitcher;
 
 trait CreateRecordTranslatable
@@ -27,9 +28,13 @@ trait CreateRecordTranslatable
 
     protected function handleRecordCreation(array $data): Model
     {
-        $record = static::getModel()::usingLocale(
-            $this->activeFormLocale,
-        )->fill($data);
+        $record = app(static::getModel());
+        $record->fill(Arr::except($data, $record->getTranslatableAttributes()));
+
+        foreach (Arr::only($data, $record->getTranslatableAttributes()) as $key => $value) {
+            $record->setTranslation($key, $this->activeFormLocale, $value);
+        }
+
         $record->save();
 
         return $record;

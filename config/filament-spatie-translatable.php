@@ -15,7 +15,7 @@ return [
 
     'locales' => [config('app.locale')],
 
-    'show_hints' => true,
+    'show_hint' => true,
 
     'hint_icon' => 'heroicon-s-translate',
 

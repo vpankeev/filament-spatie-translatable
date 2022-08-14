@@ -3,13 +3,18 @@
 namespace Randes\Translatable\Traits;
 
 use Exception;
+use Randes\Translatable\Actions\LocaleSwitcher;
 use Spatie\Translatable\HasTranslations;
 
 trait ResourceTranslatable
 {
     public static function getDefaultTranslatableLocale(): string
     {
-        return static::getTranslatableLocales()[0];
+        $sessionLocale = session()->get(LocaleSwitcher::SESSION_KEY);
+
+        return !empty($sessionLocale) && in_array($sessionLocale, static::getTranslatableLocales())
+            ? $sessionLocale
+            : static::getTranslatableLocales()[0];
     }
 
     public static function getTranslatableAttributes(): array

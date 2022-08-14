@@ -38,12 +38,9 @@ trait EditRecordTranslatable
     protected function setActiveFormLocale(): void
     {
         $resource = static::getResource();
-
-        $availableLocales = array_keys($this->record->getTranslations($resource::getTranslatableAttributes()[0]));
-        $resourceLocales = $this->getTranslatableLocales();
         $defaultLocale = $resource::getDefaultTranslatableLocale();
 
-        $this->activeLocale = $this->activeFormLocale = in_array($defaultLocale, $availableLocales) ? $defaultLocale : array_intersect($availableLocales, $resourceLocales)[0] ?? $defaultLocale;
+        $this->activeLocale = $this->activeFormLocale = $defaultLocale;
         $this->record->setLocale($this->activeFormLocale);
     }
 

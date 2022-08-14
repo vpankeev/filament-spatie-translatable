@@ -25,4 +25,9 @@ trait HasActiveLocaleSwitcher
     {
         return $this->translatableLocales ?? static::getResource()::getTranslatableLocales();
     }
+
+    public function updatingActiveLocale($locale)
+    {
+        session()->put(LocaleSwitcher::SESSION_KEY, $locale);
+    }
 }

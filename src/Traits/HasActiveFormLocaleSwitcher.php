@@ -21,6 +21,11 @@ trait HasActiveFormLocaleSwitcher
         return LocaleSwitcher::make();
     }
 
+    public function updatingActiveLocale($locale)
+    {
+        session()->put(LocaleSwitcher::SESSION_KEY, $locale);
+    }
+
     public function updatedActiveLocale(): void
     {
         $this->syncInput(

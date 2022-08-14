@@ -7,6 +7,8 @@ use Randes\Translatable\Facades\SpatieLaravelTranslatablePlugin;
 
 class LocaleSwitcher extends SelectAction
 {
+    const SESSION_KEY = 'model-locale';
+
     public static function getDefaultName(): ?string
     {
         return 'activeLocale';

@@ -19,5 +19,7 @@ return [
 
     'hint_icon' => 'heroicon-s-translate',
 
-    'save_before_switch' => false
+    'save_before_switch' => false,
+
+    'refresh_page_after_updated' => true
 ];

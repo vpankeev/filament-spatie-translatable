@@ -30,4 +30,11 @@ trait HasActiveLocaleSwitcher
     {
         session()->put(LocaleSwitcher::SESSION_KEY, $locale);
     }
+
+    public function updatedActiveLocale($locale)
+    {
+        if (config('filament-spatie-translatable.refresh_page_after_updated')) {
+            return redirect(request()->header('Referer'));
+        }
+    }
 }

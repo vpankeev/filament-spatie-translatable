@@ -57,9 +57,11 @@ trait EditRecordTranslatable
         return $record;
     }
 
-    public function updatedActiveFormLocale(): void
+    public function updatedActiveFormLocale()
     {
-        $this->fillForm();
+        if (config('filament-spatie-translatable.refresh_page_after_updated')) {
+            return redirect(request()->header('Referer'));
+        }
     }
 
     public function updatingActiveFormLocale(): void

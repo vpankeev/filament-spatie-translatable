@@ -18,8 +18,8 @@
     ],
     "require": {
         "php": "^8.0",
-        "filament/filament": "^2.1",
-        "laravel/framework": "^9.0",
+        "filament/filament": "^2",
+        "laravel/framework": "^9.0|^10.0",
         "spatie/laravel-translatable": "^6.0"
     },
     "autoload": {

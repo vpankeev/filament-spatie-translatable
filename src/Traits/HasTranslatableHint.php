@@ -51,10 +51,10 @@ trait HasTranslatableHint
                 continue;
             }
 
-            if ($hasHintMethod) {
+            if ($hasHintMethod && is_null($component->getHint())) {
                 $component->hint(__('filament-spatie-translatable::common.translatable'));
             }
-            if ($hasHintIconMethod) {
+            if ($hasHintIconMethod && is_null($component->getHintIcon())) {
                 $component->hintIcon($hintIcon);
             }
         }
